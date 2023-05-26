@@ -47,7 +47,7 @@
         }
 
         input[type=phone] {
-            width: 90%;
+            width: 70%;
             padding: 12px 20px;
             margin: 8px 0;
             border: none;
@@ -143,19 +143,19 @@
 
                 <div>
                     <label for="first_name">First Name</label>
-                    <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+                    <input  id="first_name" maxlength="40" name="first_name" size="20" required type="text" /><br>
                 </div>
                 <div>
-                        <label for="last_name">Last Name</label><br><input  id="last_name" maxlength="100" name="last_name" size="20" type="text" /><br>
+                        <label for="last_name">Last Name</label><br><input  id="last_name" maxlength="100" name="last_name" size="20" type="phone" /><br>
                 </div>
             </div>
 
             <div style="margin-top: 8%;">
-                <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+                <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" type="text" /><br>
             </div>
 
             <div style="margin-top: 8%;">
-                <label for="phone">Phone</label><input  id="phone" maxlength="10" name="phone" size="20" type="text" /><br>
+                <label for="phone">Phone</label><input  id="phone" maxlength="10" name="phone" required size="20" type="text" /><br>
             </div>
 
             <br><br>
