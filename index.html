@@ -4,6 +4,80 @@
 <head>
     <title>BYOBFG</title>
         <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+            <style>
+                :root {
+                  --form-control-color: yellow;
+                }
+                
+                *,
+                *:before,
+                *:after {
+                  box-sizing: border-box;
+                }
+                
+                .form-control {
+                  font-family: system-ui, sans-serif;
+                  font-size: 1rem;
+                  /*font-weight: bold;*/
+                }
+                
+                input[type="checkbox"] {
+                  /* Add if not using autoprefixer */
+                  -webkit-appearance: none;
+                  /* Remove most all native input styles */
+                  appearance: none;
+                  /* For iOS < 15 */
+                  background-color: var(--form-background);
+                  /* Not removed via appearance */
+                  margin: 0;
+                
+                  font: inherit;
+                  color: currentColor;
+                  width: 1.15em;
+                  height: 1.15em;
+                  border: 0.15em solid currentColor;
+                  border-radius: 0.15em;
+                  transform: translateY(-0.075em);
+                
+                  display: grid;
+                  place-content: center;
+                }
+                
+                input[type="checkbox"]::before {
+                  content: "";
+                  width: 0.65em;
+                  height: 0.65em;
+                  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+                  transform: scale(0);
+                  transform-origin: bottom left;
+                  transition: 120ms transform ease-in-out;
+                  box-shadow: inset 1em 1em var(--form-control-color);
+                  /* Windows High Contrast Mode */
+                  background-color: CanvasText;
+                }
+                
+                input[type="checkbox"]:checked::before {
+                  transform: scale(1);
+                }
+                
+                input[type="checkbox"]:focus {
+                  outline: max(2px, 0.15em) solid currentColor;
+                  outline-offset: max(2px, 0.15em);
+                }
+                
+                input[type="checkbox"]:disabled {
+                  --form-control-color: var(--form-control-disabled);
+                
+                  color: var(--form-control-disabled);
+                  cursor: not-allowed;
+                }
+                
+                /* Hover effect */
+                input[type="checkbox"]:hover::before {
+                  transform: scale(1.1);
+                }
+                
+                </style>
     <style>
         body {
             background-color: black;
@@ -198,20 +272,36 @@
     
         <div id="try" style=" width:40%;color:white;font-Size:22px; margin-left:-25%;margin-top:0% ">
                 <br><br>
-    
-            <input  id="00NDn00000aHnFL" class="checkbox-hover" name="00NDn00000aHnFL" type="checkbox" value="1" />Living Benefits<br>
-    
-            <input  id="00NDn00000aHnFQ" name="00NDn00000aHnFQ" type="checkbox" value="1" />Tax Free Retirement<br>
-    
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aHnFL" class="checkbox-hover" name="00NDn00000aHnFL" type="checkbox" value="1" /> &nbsp; Living Benefits
+                </div>
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aHnFQ" name="00NDn00000aHnFQ" type="checkbox" value="1" />&nbsp; Tax Free Retirement
+                </div>
             
-            
-            <input  id="00NDn00000aHnFV" class="checkbox-hover" name="00NDn00000aHnFV" type="checkbox" value="1" />Mortgage Protection<br>
-            <input  id="00NDn00000aHnFf" class="checkbox-hover" name="00NDn00000aHnFf" type="checkbox" value="1" />Business Preservation<br>
-            <input  id="00NDn00000aHnFa" class="checkbox-hover" name="00NDn00000aHnFa" type="checkbox" value="1" />College Planning<br>
-            <input  id="00NDn00000aHnPG" class="checkbox-hover" name="00NDn00000aHnPG" type="checkbox" value="1" />Financial Education<br>
-            <input  id="00NDn00000aI3IE" class="checkbox-hover" name="00NDn00000aI3IE" type="checkbox" value="1" />BYOB (Be Your Own Bank)<br>
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aHnFV" class="checkbox-hover" name="00NDn00000aHnFV" type="checkbox" value="1" />&nbsp;Mortgage Protection
+                </div>
+                    
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aHnFf" class="checkbox-hover" name="00NDn00000aHnFf" type="checkbox" value="1" />&nbsp;Business Preservation
+                </div>
+                
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aHnFa" class="checkbox-hover" name="00NDn00000aHnFa" type="checkbox" value="1" />&nbsp;College Planning
+                </div>
+                
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aHnPG" class="checkbox-hover" name="00NDn00000aHnPG" type="checkbox" value="1" />&nbsp;Financial Education
 
-            <br><br>
+                </div>
+                
+                <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-bottom:2%">
+                    <input  id="00NDn00000aI3IE" class="checkbox-hover" name="00NDn00000aI3IE" type="checkbox" value="1" />&nbsp;BYOB (Be Your Own Bank)
+                </div>
+                    
+                
+            
             <h4 style="margin-left: 30%;">Referred By</h4>
             <select style="    width: max-content;
                     height: 40px;
@@ -229,7 +319,7 @@
                 Referral Name:<input  id="00NDn00000aHzoU" maxlength="50" name="00NDn00000aHzoU" size="20" type="text" /><br>
             </div>
             
-            </div>
+        </div>
     </div>
 
 
